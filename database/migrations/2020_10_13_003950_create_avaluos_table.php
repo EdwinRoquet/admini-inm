@@ -22,7 +22,7 @@ class CreateAvaluosTable extends Migration
             $table->string('status');
             $table->uuid('uuid');
             $table->string('valor');
-            $table->string('nota')->nullable();
+            $table->text('nota')->nullable();
             $table->timestamps();
         });
     }

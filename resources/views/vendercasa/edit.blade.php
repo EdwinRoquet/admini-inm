@@ -159,7 +159,7 @@
                                                 <div class="input-group-prepend">
                                                   <span class="input-group-text" id=""><i class="fas fa-id-card-alt"></i></span>
                                                 </div>
-                                                <input id="curp" placeholder="Curp" class="form-control @error("curp") is-invalid @enderror" type="text" name="curp" value="{{$venderCasa->curp}}" >
+                                                <input id="curp" placeholder="Curp o Credito" class="form-control @error("curp") is-invalid @enderror" type="text" name="curp" value="{{$venderCasa->curp}}" >
                                                      @error("curp")
                                                      <div class="invalid-feedback">
                                                          {{$message}}
@@ -289,6 +289,7 @@
                                <div class="col-md-6">
 
                                 <h2 class="text-center">Datos de la propiedad</h2>
+
                                 @foreach($venderCasa->propiedades as  $propiedad)
 
 
@@ -382,10 +383,7 @@
 
                                   <input type="hidden" name="uuid" value="{{$propiedad->uuid}}" id="uuid">
 
-                                  <div class="form-group">
-                                      <label for="">Nota</label>
-                                      <textarea name="nota" id="" class="form-control" rows="10">{{$propiedad->nota}}</textarea>
-                                    </div>
+
 
                                     <input type="hidden" name="id_propiedad" value="{{$propiedad->id}}">
                                     <input type="hidden" name="id_usuario" value="{{$propiedad->id_usuario}}">
@@ -400,6 +398,11 @@
                                         @endforeach
                                     @endif
                                     </div>
+
+                                    <div class="form-group">
+                                        <label for="">Nota</label>
+                                        <textarea name="nota" id="" class="form-control" rows="10">{{$venderCasa->fec_nacimiento}}</textarea>
+                                      </div>
 
 
                                </div>

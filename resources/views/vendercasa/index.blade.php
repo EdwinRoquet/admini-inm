@@ -41,22 +41,24 @@
                     <th>Nombre del prospectador </th>
                     <th>Nombre del prospectado </th>
                     <th>Fecha de Nacimiento </th>
+                    <th>Imss </th>
+                    <th>Curp o Credito </th>
+                    <th>Tel </th>
+                    <th>Cel </th>
                     <th>Direccion </th>
                     <th>Nacionalidad </th>
                     <th>Colonia </th>
                     <th>Municipio </th>
                     <th>Estado </th>
-                    <th>Imss </th>
-                    <th>Curp </th>
                     <th>Rfc </th>
                     <th>Operacion </th>
-                    <th>Rel </th>
-                    <th>Cel </th>
                     <th>Email </th>
                     <th>Predial </th>
                     <th>Luz </th>
                     <th>Agua </th>
                     <th>Propiedad </th>
+                    <th>Nota </th>
+
 
 
                     <th style="width: 40px">Acciones</th>
@@ -70,25 +72,27 @@
                     <td>{{ $vendercasa->prospectador->name }} </td>
                     <td>{{ $vendercasa->nombre}} </td>
                     <td>{{ $vendercasa->fec_nacimiento}} </td>
+                    <td>{{ $vendercasa->imss}} </td>
+                    <td>{{ $vendercasa->curp}} </td>
+                    <td>{{ $vendercasa->tel}} </td>
+                    <td>{{ $vendercasa->cel}} </td>
                     <td>{{ $vendercasa->direccion}} </td>
                     <td>{{ $vendercasa->nacionalidad}} </td>
                     <td>{{ $vendercasa->colonia}} </td>
                     <td>{{ $vendercasa->municipio}} </td>
                     <td>{{ $vendercasa->estado}} </td>
-                    <td>{{ $vendercasa->imss}} </td>
-                    <td>{{ $vendercasa->curp}} </td>
                     <td>{{ $vendercasa->rfc}} </td>
                     <td>{{ $vendercasa->operaciones->nombre}} </td>
-                    <td>{{ $vendercasa->tel}} </td>
-                    <td>{{ $vendercasa->cel}} </td>
                     <td>{{ $vendercasa->email}} </td>
                     <td>{{ $vendercasa->predial}} </td>
                     <td>{{ $vendercasa->c_agua}} </td>
                     <td>{{ $vendercasa->c_luz}} </td>
+
                     <td>
 
                     <a href="{{route('vendercasa.show', ['venderCasa' => $vendercasa->id])}}" class="btn btn-info">Ver</a>
                     </td>
+                    <td>{{ $vendercasa->nota}} </td>
 
                         <td>
                           <div class="btn-group" role="group" aria-label="Vertical button group">
@@ -96,7 +100,7 @@
                                  <i class="fas fa-pencil-alt"></i>
                               </a>
 
-                             <form action={{route('vendercasa.destroy',['venderCasa',$vendercasa->id])}} method="POST">
+                             <form action={{route('vendercasa.destroy', ['venderCasa' => $vendercasa->id])}} method="POST">
                                  @csrf
                                  @method('DELETE')
 

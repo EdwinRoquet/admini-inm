@@ -1,4 +1,8 @@
 @extends('layouts.adminlte')
+@section('styles')
+    <link rel="stylesheet" href="{{ asset('css\lightbox.css')}}">
+ @endsection
+
 
 @section('content')
 <div class="content-wrapper">
@@ -62,7 +66,11 @@
                              <td>
                                 <div class="row">
                                     @foreach($propiedad->imagenes as $key => $imagen)
-                                         <img src="/storage/{{$imagen->ruta_imagen}}" height="50" width="50" class="img-fluid m-1" alt="">
+
+                                         <a href="storage/{{$imagen->ruta_imagen}}" data-lightbox="image-1" data-title="Propiedad:{{$propiedad->titulo}}">
+                                            <img class="img-thumbnail"  src="storage/{{$imagen->ruta_imagen}}" width="100px" alt="">
+                                          </a>
+                                          <a download="propiedad:{{$propiedad->titulo}}" href="{{asset("storage/$imagen->ruta_imagen")}}">Descargar</a>
 
                                     @endforeach
                                 </div>

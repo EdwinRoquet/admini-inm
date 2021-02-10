@@ -25,6 +25,7 @@ class ComprarCasa extends Model
         'tel',
         'cel',
         'email',
+        'nota',
         'id_metodo',
     ];
 

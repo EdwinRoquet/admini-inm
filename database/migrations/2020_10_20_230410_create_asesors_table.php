@@ -22,7 +22,7 @@ class CreateAsesorsTable extends Migration
             $table->string('de_predial');
             $table->string('de_agua');
             $table->string('de_luz');
-            $table->string('nota');
+            $table->text('nota');
             $table->string('otros');
             $table->timestamps();
         });

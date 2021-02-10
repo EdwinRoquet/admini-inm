@@ -18,7 +18,7 @@ class CreatePerfilVendedorsTable extends Migration
             $table->string('id_vendedor')->references('id')->on('vender_casas')->comment('El prospecto que vende casa');
             $table->string('id_admin')->references('id')->on('users')->comment('El usuario que atendio el seguimiento');
             $table->string('deuda');
-            $table->string('nota')->nullable();
+            $table->text('nota')->nullable();
             $table->timestamps();
         });
     }

@@ -26,7 +26,7 @@ class CreateVentasTable extends Migration
             $table->string('clave_inter');
             $table->uuid('uuid');
             $table->string('taller');
-            $table->string('nota');
+            $table->text('nota');
             $table->string('refer_uno')->nullable();
             $table->string('refer_dos')->nullable();
             $table->string('refer_tres')->nullable();

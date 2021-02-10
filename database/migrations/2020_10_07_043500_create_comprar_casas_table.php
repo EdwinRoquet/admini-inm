@@ -25,13 +25,13 @@ class CreateComprarCasasTable extends Migration
             $table->string('estado')->nullable();
             $table->string('imss');
             $table->string('curp');
-            $table->string('rfc');
+            $table->string('rfc')->nullable();
             $table->string('id_operacion')->references('id')->on('users')->comment('la operacion que recibe el prospecto');
             $table->string('tel')->nullable();
-            $table->string('cel');
+            $table->string('cel')->nullable();
             $table->boolean('status')->default(false);
             $table->string('email')->nullable();
-            $table->string('nota')->nullable();
+            $table->text('nota')->nullable();
             $table->string('id_metodo')->references('id')->on('users')->comment('El metodo que recibe el prospecto');
             $table->timestamps();
         });

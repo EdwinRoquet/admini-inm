@@ -7,11 +7,11 @@
     <section class="content">
             <div class="container-fluid">
                 <div class="row">
-                  <div class="col-4 mt-3">
+                  <div class="col-12 col-md-4 mt-3">
                       <div class="card">
 
                         <div class="card-header bg-white  border-transparent">
-                            <h1 class="card-title">Perfil de usuario vendedor</h1>
+                            <h1 class="card-title">Perfil </h1>
                             <div class="card-tools">
                              <button type="button" class="btn btn-tool" data-card-widget="collapse">
                                  <i class="fas fa-minus"></i>
@@ -81,7 +81,7 @@
                     </div>
 
 
-                    <div class="col-8 mt-3">
+                    <div class="col-12 col-md-8 mt-3">
 
                         <div class="card">
 
@@ -105,8 +105,8 @@
                                   <tr>
                                     <th style="width: 10px">#</th>
                                        <th> Nombre del prospecto:</th>
-                                       <th> Curp:</th>
-                                       <th> Rfc</th>
+                                       <th> Curp o Credito</th>
+                                       <th> Fecha de nacimiento</th>
                                        <th> Celular</th>
                                        <th> Telefono</th>
                                        <th> Mas Detalles</th>
@@ -118,7 +118,7 @@
                                       <td>{{$key +1}}</td>
                                       <td>{{$vendedorcasa->nombre}}</td>
                                       <td>{{$vendedorcasa->curp  }}</td>
-                                      <td>{{$vendedorcasa->rfc   }}</td>
+                                      <td>{{$vendedorcasa->fec_nacimiento   }}</td>
                                       <td>{{$vendedorcasa->cel   }}</td>
                                       <td>{{$vendedorcasa->tel   }}</td>
                                       <td>
@@ -148,7 +148,7 @@
       <!-- Default box -->
       <div class="card ">
          <div class="card-header bg-white border-transparent">
-             <h1 class="card-title">Registro de perfiles de compra</h1>
+             <h1 class="card-title">Registro de perfiles vendedor</h1>
          </div>
         <div class="card-body">
           <!--Tabla Usuario-->

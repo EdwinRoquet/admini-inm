@@ -43,37 +43,27 @@ class ComprarCasaController extends Controller
             'id_prospectador' => 'required',
             'nombre'          => 'required',
             'fecha'           => 'required',
-            'direccion'       => 'required',
-            'nacionalidad'    => 'required',
-            'colonia'         => 'required',
-            'municipio'       => 'required',
-            'estado'          => 'required',
             'imss'            => 'required',
             'curp'            => 'required',
-            'rfc'             => 'required',
             'operacion'       => 'required',
             'tel'             => 'required',
             'cel'             => 'required',
             'email'           => 'required',
             'metodo'          => 'required',
+            'nota'          => 'required',
         ]);
 
           ComprarCasa::create([
                'id_prospectador' => $data['id_prospectador'],
                'nombre'          => $data['nombre'],
                'fec_nacimiento'  => $data['fecha'],
-               'direccion'       => $data['direccion'],
-               'nacionalidad'    => $data['nacionalidad'],
-               'colonia'         => $data['colonia'],
-               'municipio'       => $data['municipio'],
-               'estado'          => $data['estado'],
                'imss'            => $data['imss'],
                'curp'            => $data['curp'],
-               'rfc'             => $data['rfc'],
                'id_operacion'    => $data['operacion'],
                'tel'             => $data['tel'],
                'cel'             => $data['cel'],
                'email'           => $data['email'],
+               'nota'           => $data['nota'],
                'id_metodo'       => $data['metodo'],
           ]);
 
@@ -113,6 +103,8 @@ class ComprarCasaController extends Controller
      */
     public function update(Request $request, ComprarCasa $comprarCasa)
     {
+
+        // dd($request);
         $data = $request->validate([
             'id_prospectador' => 'required',
             'nombre'          => 'required',
@@ -130,6 +122,7 @@ class ComprarCasaController extends Controller
             'cel'             => 'required',
             'email'           => 'required',
             'metodo'          => 'required',
+            'nota'          => 'required',
         ]);
 
         $comprarCasa->id_prospectador = $data['id_prospectador'];
@@ -148,6 +141,7 @@ class ComprarCasaController extends Controller
         $comprarCasa->cel = $data['cel'];
         $comprarCasa->email = $data['email'];
         $comprarCasa->id_metodo = $data['metodo'];
+        $comprarCasa->nota = $data['nota'];
 
         $comprarCasa->save();
 

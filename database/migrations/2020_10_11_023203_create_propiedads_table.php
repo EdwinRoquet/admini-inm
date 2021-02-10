@@ -16,13 +16,13 @@ class CreatePropiedadsTable extends Migration
         Schema::create('propiedads', function (Blueprint $table) {
             $table->id();
             $table->string('id_usuario')->nullable()->references('id')->on('vender_casas')->comment('referencia al dueño de la casa');
-            $table->string('titulo');
-            $table->string('recamaras');
-            $table->uuid('uuid');
-            $table->string('baños');
-            $table->string('estacionamiento');
+            $table->string('titulo')->nullable();
+            $table->string('recamaras')->nullable();
+            $table->uuid('uuid')->nullable();
+            $table->string('baños')->nullable();
+            $table->string('estacionamiento')->nullable();
             $table->string('estructura_cons')->nullable();
-            $table->string('m_terreno');
+            $table->string('m_terreno')->nullable();
             $table->string('m_construccion')->nullable();
             $table->string('nota')->nullable();
             $table->timestamps();

@@ -239,6 +239,11 @@
                        @enderror
                 </div>
 
+                <div class="form-group">
+                    <label for="">Nota</label>
+                    <textarea name="nota" id="" class="form-control" rows="10">{{$comprarCasa->nota}}</textarea>
+                </div>
+
               <input type="hidden" name="id_prospectador" value="{{$comprarCasa->id_prospectador}}">
 
                                             <button class="btn btn-success" type="submit">Guardar Cambios</button>

@@ -56,33 +56,14 @@ class VenderCasaController extends Controller
         $data = $request->validate([
             'id_prospectador'  => 'required',
             'nombre'           => 'required',
-            'fecha'   => 'required',
-            'direccion'        => 'required',
-            'nacionalidad'     => 'required',
-            'colonia'          => 'required',
-            'municipio'        => 'required',
-            'estado'           => 'required',
+            'fecha'            => 'required',
             'imss'             => 'required',
             'curp'             => 'required',
-            'rfc'              => 'required',
-            'operacion'     => 'required',
+            'operacion'        => 'required',
             'tel'              => 'required',
             'cel'              => 'required',
-            'lat'              => 'required',
-            'lng'              => 'required',
-            'email'            => 'required',
-            'predial'          => 'required',
-            'titulo'          => 'required',
-            'agua'             => 'required',
-            'luz'              => 'required',
-            'recamaras'       => 'required',
-            'baños'           => 'required',
-            'estacionamiento' => 'required',
-            'estructura'      => 'required',
-            'nota'            => 'required',
-            'uuid'            => 'required',
-            'metros_terreno'      => 'required',
-            'metros_construccion' => 'required',
+            'nota'             => 'required',
+            'uuid'             => 'required',
         ]);
 
 
@@ -90,39 +71,20 @@ class VenderCasaController extends Controller
             'id_prospectador' => $data['id_prospectador'],
             'nombre'          => $data['nombre'],
             'fec_nacimiento'  => $data['fecha'],
-            'direccion'       => $data['direccion'],
-            'lat'       => $data['lat'],
-            'lng'       => $data['lng'],
-            'nacionalidad'    => $data['nacionalidad'],
-            'colonia'         => $data['colonia'],
-            'municipio'       => $data['municipio'],
-            'estado'          => $data['estado'],
             'imss'            => $data['imss'],
             'curp'            => $data['curp'],
-            'rfc'             => $data['rfc'],
             'id_operacion'    => $data['operacion'],
             'tel'             => $data['tel'],
             'cel'             => $data['cel'],
-            'email'           => $data['email'],
+            'nota'             => $data['nota'],
             'uuid'           => $data['uuid'],
-            'predial'         => $data['predial'],
-            'c_agua'          => $data['agua'],
-            'c_luz'           => $data['luz'],
-        ]);
 
+     ]);
 
-        Propiedad::create([
-            'id_usuario'      => $cliente->id,
-            'titulo'       => $data['titulo'],
-            'recamaras'       => $data['recamaras'],
-            'baños'           => $data['baños'],
-            'uuid'            => $data['uuid'],
-            'estacionamiento' => $data['estacionamiento'],
-            'estructura_cons' => $data['estructura'],
-            'm_terreno'       => $data['metros_terreno'],
-            'm_construccion'  => $data['metros_construccion'],
-            'nota'            => $data['nota'],
-        ]);
+     Propiedad::create([
+        'id_usuario'      => $cliente->id,
+        'uuid'            => $data['uuid'],
+    ]);
 
 
 
@@ -196,8 +158,8 @@ class VenderCasaController extends Controller
             'operacion'     => 'required',
             'tel'              => 'required',
             'cel'              => 'required',
-            'lat'              => 'required',
-            'lng'              => 'required',
+            // 'lat'              => 'required',
+            // 'lng'              => 'required',
             'email'            => 'required',
             'predial'          => 'required',
             'titulo'          => 'required',
@@ -217,8 +179,8 @@ class VenderCasaController extends Controller
         $venderCasa->nombre = $data['nombre'];
         $venderCasa->fec_nacimiento = $data['fecha'];
         $venderCasa->direccion = $data['direccion'];
-        $venderCasa->lat = $data['lat'];
-        $venderCasa->lng = $data['lng'];
+        $venderCasa->lat = $request->input('lat');
+        $venderCasa->lng = $request->input('lng');
         $venderCasa->nacionalidad = $data['nacionalidad'];
         $venderCasa->colonia = $data['colonia'];
         $venderCasa->municipio = $data['municipio'];

@@ -42,19 +42,20 @@
                     <th style="width: 10px">#</th>
                     <th>Nombre </th>
                     <th>Fecha de Nacimiento </th>
+                    <th>Imss </th>
+                    <th>Curp </th>
+                    <th>Tel </th>
+                    <th>Cel </th>
                     <th>Direccion </th>
                     <th>Nacionalidad </th>
                     <th>Colonia </th>
                     <th>Municipio </th>
                     <th>Estado </th>
-                    <th>Imss </th>
-                    <th>Curp </th>
                     <th>Rfc </th>
                     <th>Operacion </th>
-                    <th>Rel </th>
-                    <th>Cel </th>
                     <th>Email </th>
                     <th>Metodo de pago </th>
+                    <th>Nota </th>
 
                     <th style="width: 40px">Acciones</th>
                   </tr>
@@ -66,19 +67,20 @@
                     <td>{{ $key + 1}}</td>
                     <td> {{ $comprarcasa->nombre }}</td>
                     <td> {{ $comprarcasa->fec_nacimiento }}</td>
+                    <td> {{ $comprarcasa->imss }}</td>
+                    <td> {{ $comprarcasa->curp }}</td>
+                    <td> {{ $comprarcasa->tel }}</td>
+                    <td> {{ $comprarcasa->cel }}</td>
                     <td> {{ $comprarcasa->direccion }}</td>
                     <td> {{ $comprarcasa->nacionalidad }}</td>
                     <td> {{ $comprarcasa->colonia }}</td>
                     <td> {{ $comprarcasa->municipio }}</td>
                     <td> {{ $comprarcasa->estado }}</td>
-                    <td> {{ $comprarcasa->imss }}</td>
-                    <td> {{ $comprarcasa->curp }}</td>
                     <td> {{ $comprarcasa->rfc }}</td>
                     <td> {{ $comprarcasa->operaciones->nombre  }}</td>
-                    <td> {{ $comprarcasa->tel }}</td>
-                    <td> {{ $comprarcasa->cel }}</td>
                     <td> {{ $comprarcasa->email }}</td>
                     <td> {{$comprarcasa->metodo->nombre}}</td>
+                    <td> {{$comprarcasa->nota}}</td>
 
                         <td>
                           <div class="btn-group" role="group" aria-label="Vertical button group">
@@ -158,81 +160,14 @@
                 </div>
 
 
-
-                          <div class="input-group  mb-3">
-                             <div class="input-group-prepend">
-                               <span class="input-group-text" id=""><i class="fas fa-road"></i></span>
-                             </div>
-                             <input id="direccion" placeholder="Calle, Numero Y Codigo Postal" class="form-control @error("direccion") is-invalid @enderror" type="text" name="direccion" value="{{old("direccion")}}" >
-                                  @error("direccion")
-                                  <div class="invalid-feedback">
-                                      {{$message}}
-                                  </div>
-                                  @enderror
-                           </div>
-
-
-                     <div class="input-group  mb-3">
-                        <div class="input-group-prepend">
-                          <span class="input-group-text" id=""><i class="fas fa-globe-americas"></i></span>
-                        </div>
-                        <input id="nacionalidad" placeholder="Nacionalidad" class="form-control @error("nacionalidad") is-invalid @enderror" type="text" name="nacionalidad" value="{{old("nacionalidad")}}" >
-                             @error("nacionalidad")
-                             <div class="invalid-feedback">
-                                 {{$message}}
-                             </div>
-                             @enderror
-                      </div>
-
                 <div class="row">
-                      <div class="col-md-6">
-                          <div class="input-group  mb-3">
-                             <div class="input-group-prepend">
-                               <span class="input-group-text" id=""><i class="fas fa-building"></i></span>
-                             </div>
-                             <input id="colonia" placeholder="Colonia" class="form-control @error("colonia") is-invalid @enderror" type="text" name="colonia" value="{{old("colonia")}}" >
-                                  @error("colonia")
-                                  <div class="invalid-feedback">
-                                      {{$message}}
-                                  </div>
-                                  @enderror
-                           </div>
-                      </div>
-                      <div class="col-md-6">
-                     <div class="input-group  mb-3">
-                        <div class="input-group-prepend">
-                          <span class="input-group-text" id=""><i class="fas fa-city"></i></span>
-                        </div>
-                        <input id="municipio" placeholder="Municipio" class="form-control @error("municipio") is-invalid @enderror" type="text" name="municipio" value="{{old("municipio")}}" >
-                             @error("municipio")
-                             <div class="invalid-feedback">
-                                 {{$message}}
-                             </div>
-                             @enderror
-                      </div>
-                      </div>
-                </div>
 
-                <div class="row">
-                      <div class="col-md-6">
-                          <div class="input-group  mb-3">
-                             <div class="input-group-prepend">
-                               <span class="input-group-text" id=""><i class="fas fa-map"></i></span>
-                             </div>
-                             <input id="estado" placeholder="Estado" class="form-control @error("estado") is-invalid @enderror" type="text" name="estado" value="{{old("estado")}}" >
-                                  @error("estado")
-                                  <div class="invalid-feedback">
-                                      {{$message}}
-                                  </div>
-                                  @enderror
-                           </div>
-                      </div>
                       <div class="col-md-6">
                      <div class="input-group  mb-3">
                         <div class="input-group-prepend">
                           <span class="input-group-text" id=""><i class="fas fa-hospital"></i></span>
                         </div>
-                        <input id="imss" placeholder="Numero de seguro social (nss)" class="form-control @error("imss") is-invalid @enderror" type="text" name="imss" value="{{old("imss")}}" >
+                        <input id="imss" placeholder="Nss" class="form-control @error("imss") is-invalid @enderror" type="text" name="imss" value="{{old("imss")}}" >
                              @error("imss")
                              <div class="invalid-feedback">
                                  {{$message}}
@@ -240,35 +175,24 @@
                              @enderror
                       </div>
                       </div>
-                </div>
-                <div class="row">
+
                       <div class="col-md-6">
-                          <div class="input-group  mb-3">
-                             <div class="input-group-prepend">
-                               <span class="input-group-text" id=""><i class="fas fa-id-card-alt"></i></span>
-                             </div>
-                             <input id="curp" placeholder="Curp" class="form-control @error("curp") is-invalid @enderror" type="text" name="curp" value="{{old("curp")}}" >
-                                  @error("curp")
-                                  <div class="invalid-feedback">
-                                      {{$message}}
-                                  </div>
-                                  @enderror
+                        <div class="input-group  mb-3">
+                           <div class="input-group-prepend">
+                             <span class="input-group-text" id=""><i class="fas fa-id-card-alt"></i></span>
                            </div>
-                      </div>
-                      <div class="col-md-6">
-                     <div class="input-group  mb-3">
-                        <div class="input-group-prepend">
-                          <span class="input-group-text" id=""><i class="fas fa-id-card"></i></span>
-                        </div>
-                        <input id="rfc" placeholder="Rfc" class="form-control @error("rfc") is-invalid @enderror" type="text" name="rfc" value="{{old("rfc")}}" >
-                             @error("rfc")
-                             <div class="invalid-feedback">
-                                 {{$message}}
-                             </div>
-                             @enderror
-                      </div>
-                      </div>
+                           <input id="curp" placeholder="Curp" class="form-control @error("curp") is-invalid @enderror" type="text" name="curp" value="{{old("curp")}}" >
+                                @error("curp")
+                                <div class="invalid-feedback">
+                                    {{$message}}
+                                </div>
+                                @enderror
+                         </div>
+                    </div>
+
                 </div>
+
+
 
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
@@ -354,11 +278,16 @@
                          @enderror
                   </div>
 
+                  <div class="form-group">
+                    <label for="">Nota</label>
+                    <textarea name="nota" id="" class="form-control" rows="10"></textarea>
+                  </div>
+
                 <input type="hidden" name="id_prospectador" value="{{auth()->user()->id}}">
 
 
                 </div>
-                <div class="modal-footer">
+            <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
                     <button type="submit" class="btn btn-primary">Guardar Cambios</button>
                 </div>

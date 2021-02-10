@@ -19,7 +19,7 @@
     <section class="content">
             <div class="container-fluid">
                 <div class="row">
-                  <div class="col-6 mt-3">
+                  <div class="col-12 col-md-6 mt-3">
                       <div class="card">
 
                         <div class="card-header bg-white  border-transparent">
@@ -235,12 +235,12 @@
                     </div>
 
 
-                    <div class="col-6 mt-3">
+                    <div class="col-12 col-md-6 mt-3">
 
                         <div class="card">
 
                             <div class="card-header bg-white  border-transparent">
-                                <h1 class="card-title">Archivos</h1>
+                                <h1 class="card-title">Imagenes:</h1>
                                 <div class="card-tools">
                                  <button type="button" class="btn btn-tool" data-card-widget="collapse">
                                      <i class="fas fa-minus"></i>

@@ -27,17 +27,17 @@ class CreateVenderCasasTable extends Migration
             $table->string('lng')->nullable();
             $table->string('imss');
             $table->string('curp');
-            $table->string('rfc');
+            $table->string('rfc')->nullable();
             $table->string('id_operacion')->references('id')->on('users')->comment('la operacion que recibe el prospecto');
             $table->string('tel')->nullable();
-            $table->string('cel');
-            $table->string('email');
+            $table->string('cel')->nullable();
+            $table->string('email')->nullable();
             $table->boolean('status')->default(false);
             $table->uuid('uuid');
             $table->string('predial')->nullable();
             $table->string('c_agua')->nullable();
             $table->string('c_luz')->nullable();
-            $table->string('nota')->nullable();
+            $table->text('nota')->nullable();
             $table->timestamps();
         });
     }

@@ -20,7 +20,7 @@ class CreateSeguimientosTable extends Migration
             $table->string('capacidad_compra');
             $table->string('des_mensual');
             $table->string('reembolso');
-            $table->string('nota')->nullable();
+            $table->text('nota')->nullable();
             $table->timestamps();
         });
     }

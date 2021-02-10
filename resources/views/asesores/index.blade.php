@@ -10,7 +10,7 @@
     <section class="content">
             <div class="container-fluid">
                 <div class="row">
-                  <div class="col-4 mt-3">
+                  <div class="col-12 col-md-4 mt-3">
                       <div class="card">
 
                         <div class="card-header bg-white  border-transparent">
@@ -147,7 +147,7 @@
                     </div>
 
 
-                    <div class="col-8 mt-3">
+                    <div class="col-12 col-md-8 mt-3">
 
                         <div class="card">
 
@@ -220,7 +220,7 @@
       <!-- Default box -->
       <div class="card ">
          <div class="card-header bg-white border-transparent">
-             <h1 class="card-title">Registro de perfiles de compra</h1>
+             <h1 class="card-title">Registro de Asesores</h1>
          </div>
         <div class="card-body">
           <!--Tabla Usuario-->

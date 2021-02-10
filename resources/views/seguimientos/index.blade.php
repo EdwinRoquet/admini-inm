@@ -7,7 +7,7 @@
     <section class="content">
             <div class="container-fluid">
                 <div class="row">
-                  <div class="col-4 mt-3">
+                  <div class="col-12 col-md-4 mt-3">
                       <div class="card">
 
                         <div class="card-header bg-white  border-transparent">
@@ -109,7 +109,7 @@
                     </div>
 
 
-                    <div class="col-8 mt-3">
+                    <div class="col-12 col-md-8 mt-3">
 
                         <div class="card">
 
@@ -128,15 +128,18 @@
 
                           <div class="card-body">
 
-                            <table id="table" class="table table-responsive table-bordered table-striped">
+
+                         <table  id="table"class="table table-bordered table-striped dt-responsive tablas" width="100%">
                                 <thead>
                                   <tr>
                                     <th style="width: 10px">#</th>
                                        <th> Nombre del prospecto:</th>
+                                       <th> Fecha de Nacimineto:</th>
                                        <th> Curp:</th>
-                                       <th> Rfc</th>
+                                       <th> Nss:</th>
                                        <th> Celular</th>
                                        <th> Telefono</th>
+                                       <th> Metodo</th>
                                   </tr>
                                 </thead>
                                 <tbody>
@@ -144,10 +147,12 @@
                                     <tr>
                                       <td>{{$key +1}}</td>
                                       <td>{{$compradorescasa->nombre}}</td>
+                                      <td>{{$compradorescasa->fec_nacimiento}}</td>
                                       <td>{{$compradorescasa->curp}}</td>
-                                      <td>{{$compradorescasa->rfc}}</td>
+                                      <td>{{$compradorescasa->imss}}</td>
                                       <td>{{$compradorescasa->cel}}</td>
                                       <td>{{$compradorescasa->tel}}</td>
+                                      <td>{{$compradorescasa->metodo->nombre}}</td>
 
                                     @endforeach
 
@@ -182,6 +187,7 @@
                     <th style="width: 10px">#</th>
                        <th> Nombre del cLiente:</th>
                        <th> Nss:</th>
+                       <th> Metodo:</th>
                        <th> Ver cliente:</th>
                        <th> Atendió</th>
                        <th> Capacidad de Compra</th>
@@ -198,6 +204,7 @@
                       <td>{{$key +1}}</td>
                       <td>{{$seguimiento->cliente->nombre}}</td>
                       <td>{{$seguimiento->cliente->imss}}</td>
+                      <td>{{$seguimiento->cliente->metodo->nombre}}</td>
                       <td> <a href="{{route('comprarcasa.show', ['comprarCasa' => $seguimiento->cliente->id])}}" class="btn btn-block btn-outline-info btn-sm">Ver más</a></td>
                       <td>{{$seguimiento->oficina->name}}</td>
                       <td> <span class="badge badge-warning">$ {{$seguimiento->capacidad_compra}}</span></td>

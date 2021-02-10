@@ -18,6 +18,7 @@ class OperacionTableSeeder extends Seeder
             'COMPRA',
             'TRASPASO',
             'RENTA',
+            'VENTA',
         ];
 
             foreach ($operaciones as $operacion) {

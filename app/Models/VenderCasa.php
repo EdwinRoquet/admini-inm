@@ -30,6 +30,7 @@ class VenderCasa extends Model
         'uuid',
         'predial',
         'c_agua',
+        'nota',
         'c_luz',
     ];
 
